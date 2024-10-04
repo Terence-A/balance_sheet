@@ -1,8 +1,12 @@
+import Header from "./components/Header";
+import UserInfo from "./components/UserInfo";
+
 function App() {
   return (
     <>
       <main>
-        <h1>Balance Sheet</h1>
+        <Header />
+        <UserInfo />
       </main>
     </>
   );
