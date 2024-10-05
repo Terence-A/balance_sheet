@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CoinTab from "./CoinTab";
 import TotalTab from "./totalTab";
 
@@ -9,30 +8,7 @@ const formatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 2,
 });
 
-const CashCounts = () => {
-  const [coinCount, setCoinCount] = useState({
-    nickels: 0,
-    dimes: 0,
-    quarters: 0,
-    loonies: 0,
-    toonies: 0,
-    fives: 0,
-    tens: 0,
-    twenties: 0,
-    fifties: 0,
-    hundreds: 0,
-  });
-
-  //   let totalCoin = coinCount.nickels * 0.05;
-
-  const handleChange = (inputIdentifier, newValue) => {
-    setCoinCount((prevCoinCount) => {
-      return {
-        ...prevCoinCount,
-        [inputIdentifier]: +newValue,
-      };
-    });
-  };
+const CashCounts = ({ totalCoins, coinCount, handleChange }) => {
   return (
     <section className="mt-10">
       <header className="ml-[20%] text-2xl font-extrabold mb-10">
@@ -105,16 +81,16 @@ const CashCounts = () => {
         </div>
         <div className="w-[50%] pl-72 ">
           <ol>
-            <TotalTab total={formatter.format(coinCount.nickels * 0.05)} />
-            <TotalTab total={formatter.format(coinCount.dimes * 0.1)} />
-            <TotalTab total={formatter.format(coinCount.quarters * 0.25)} />
-            <TotalTab total={formatter.format(coinCount.loonies * 1.0)} />
-            <TotalTab total={formatter.format(coinCount.toonies * 2.0)} />
-            <TotalTab total={formatter.format(coinCount.fives * 5.0)} />
-            <TotalTab total={formatter.format(coinCount.tens * 10.0)} />
-            <TotalTab total={formatter.format(coinCount.twenties * 20.0)} />
-            <TotalTab total={formatter.format(coinCount.fifties * 50.0)} />
-            <TotalTab total={formatter.format(coinCount.hundreds * 100.0)} />
+            <TotalTab total={formatter.format(totalCoins.nickels)} />
+            <TotalTab total={formatter.format(totalCoins.dimes)} />
+            <TotalTab total={formatter.format(totalCoins.quarters)} />
+            <TotalTab total={formatter.format(totalCoins.loonies)} />
+            <TotalTab total={formatter.format(totalCoins.toonies)} />
+            <TotalTab total={formatter.format(totalCoins.fives)} />
+            <TotalTab total={formatter.format(totalCoins.tens)} />
+            <TotalTab total={formatter.format(totalCoins.twenties)} />
+            <TotalTab total={formatter.format(totalCoins.fifties)} />
+            <TotalTab total={formatter.format(totalCoins.hundreds)} />
           </ol>
         </div>
       </div>
