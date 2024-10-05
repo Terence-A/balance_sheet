@@ -1,3 +1,4 @@
+import CashCounts from "./components/CashCounts";
 import Header from "./components/Header";
 import UserInfo from "./components/UserInfo";
 
@@ -7,6 +8,7 @@ function App() {
       <main>
         <Header />
         <UserInfo />
+        <CashCounts />
       </main>
     </>
   );
