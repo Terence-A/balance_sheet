@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CoinTab from "./CoinTab";
+import TotalTab from "./totalTab";
 
 const CashCounts = () => {
   const [coinCount, setCoinCount] = useState({
@@ -15,37 +16,98 @@ const CashCounts = () => {
     hundreds: 0,
   });
 
-  let totalCoin = coinCount.nickels * 0.05;
+  //   let totalCoin = coinCount.nickels * 0.05;
 
-  const handleChange = ({ inputIdentifier, newValue }) => {
-    setCoinCount = (prevCoinCount) => {
+  const handleChange = (inputIdentifier, newValue) => {
+    setCoinCount((prevCoinCount) => {
       return {
         ...prevCoinCount,
         [inputIdentifier]: +newValue,
       };
-    };
+    });
   };
   return (
     <section className="mt-10">
-      <header className="ml-56 text-2xl font-semibold mb-10">
+      <header className="ml-56 text-2xl font-extrabold mb-10">
         Money Tray Count
       </header>
-      <div className="flex justify-evenly text-xl font-semibold">
-        <div>
+      <div className="flex justify-around text-xl font-semibold w-[80%]  mx-auto ">
+        <div className="w-[50%]  pl-56 ">
           <ol>
             <CoinTab
               coinTitle="X .05"
               coinName="nickels"
-              coinValue={coinCount.nickels}
+              coinAmount={coinCount.nickels}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X .10"
+              coinName="dimes"
+              coinAmount={coinCount.dimes}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X .25"
+              coinName="quarters"
+              coinAmount={coinCount.quarters}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 1.00"
+              coinName="loonies"
+              coinAmount={coinCount.loonies}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 2.00"
+              coinName="toonies"
+              coinAmount={coinCount.toonies}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 5.00"
+              coinName="fives"
+              coinAmount={coinCount.fives}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 10.00"
+              coinName="tens"
+              coinAmount={coinCount.tens}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 20.00"
+              coinName="twenties"
+              coinAmount={coinCount.twenties}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 50.00"
+              coinName="fifties"
+              coinAmount={coinCount.fifties}
+              handleChange={handleChange}
+            />
+            <CoinTab
+              coinTitle="X 100.00"
+              coinName="hundreds"
+              coinAmount={coinCount.hundreds}
               handleChange={handleChange}
             />
           </ol>
         </div>
-        <div>
+        <div className="w-[50%] pl-72 ">
           <ol>
-            <li>
-              <p>{coinCount.nickels}</p>
-            </li>
+            <TotalTab total={coinCount.nickels} />
+            <TotalTab total={coinCount.dimes} />
+            <TotalTab total={coinCount.quarters} />
+            <TotalTab total={coinCount.loonies} />
+            <TotalTab total={coinCount.toonies} />
+            <TotalTab total={coinCount.fives} />
+            <TotalTab total={coinCount.tens} />
+            <TotalTab total={coinCount.twenties} />
+            <TotalTab total={coinCount.fifties} />
+            <TotalTab total={coinCount.hundreds} />
           </ol>
         </div>
       </div>
