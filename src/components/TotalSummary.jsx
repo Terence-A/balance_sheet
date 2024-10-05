@@ -1,4 +1,4 @@
-import SummaryTab from "./components/SummaryTab";
+import SummaryTab from "./SummaryTab";
 
 const TotalSummary = () => {
   return (
@@ -15,7 +15,7 @@ const TotalSummary = () => {
           total={0}
         />
         <SummaryTab title="H. Short or Over" total={0} />
-        <SummaryTab title="I. Paid Outs" total={200} />
+        <SummaryTab title="I. Paid Outs" total={0} />
       </ol>
     </section>
   );
