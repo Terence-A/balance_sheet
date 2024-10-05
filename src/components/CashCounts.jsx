@@ -2,6 +2,13 @@ import { useState } from "react";
 import CoinTab from "./CoinTab";
 import TotalTab from "./totalTab";
 
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
 const CashCounts = () => {
   const [coinCount, setCoinCount] = useState({
     nickels: 0,
@@ -98,16 +105,16 @@ const CashCounts = () => {
         </div>
         <div className="w-[50%] pl-72 ">
           <ol>
-            <TotalTab total={coinCount.nickels} />
-            <TotalTab total={coinCount.dimes} />
-            <TotalTab total={coinCount.quarters} />
-            <TotalTab total={coinCount.loonies} />
-            <TotalTab total={coinCount.toonies} />
-            <TotalTab total={coinCount.fives} />
-            <TotalTab total={coinCount.tens} />
-            <TotalTab total={coinCount.twenties} />
-            <TotalTab total={coinCount.fifties} />
-            <TotalTab total={coinCount.hundreds} />
+            <TotalTab total={formatter.format(coinCount.nickels * 0.05)} />
+            <TotalTab total={formatter.format(coinCount.dimes * 0.1)} />
+            <TotalTab total={formatter.format(coinCount.quarters * 0.25)} />
+            <TotalTab total={formatter.format(coinCount.loonies * 1.0)} />
+            <TotalTab total={formatter.format(coinCount.toonies * 2.0)} />
+            <TotalTab total={formatter.format(coinCount.fives * 5.0)} />
+            <TotalTab total={formatter.format(coinCount.tens * 10.0)} />
+            <TotalTab total={formatter.format(coinCount.twenties * 20.0)} />
+            <TotalTab total={formatter.format(coinCount.fifties * 50.0)} />
+            <TotalTab total={formatter.format(coinCount.hundreds * 100.0)} />
           </ol>
         </div>
       </div>

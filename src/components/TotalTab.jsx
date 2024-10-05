@@ -1,9 +1,7 @@
 const TotalTab = ({ total }) => {
   return (
     <li className="my-2 ">
-      <p>
-        $ <span className="font-bold">{total}</span>
-      </p>
+      <p className="font-bold">{total}</p>
     </li>
   );
 };
