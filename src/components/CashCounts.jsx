@@ -28,11 +28,11 @@ const CashCounts = () => {
   };
   return (
     <section className="mt-10">
-      <header className="ml-56 text-2xl font-extrabold mb-10">
+      <header className="ml-[20%] text-2xl font-extrabold mb-10">
         Money Tray Count
       </header>
       <div className="flex justify-around text-xl font-semibold w-[80%]  mx-auto ">
-        <div className="w-[50%]  pl-56 ">
+        <div className="w-[50%] ml-60 ">
           <ol>
             <CoinTab
               coinTitle="X .05"
