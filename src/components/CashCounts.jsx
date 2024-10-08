@@ -11,11 +11,11 @@ const formatter = new Intl.NumberFormat("en-US", {
 const CashCounts = ({ totalCoins, coinCount, handleChange }) => {
   return (
     <section className="mt-7">
-      <header className="ml-[17%] text-lg font-extrabold mb-5">
+      <header className="ml-[17%] print:text-sm print:ml-[10%] text-lg font-extrabold mb-5">
         Money Tray Count
       </header>
       <div className="flex justify-around text-md font-semibold w-[74%]  mx-auto ">
-        <div className="w-[50%] ml-24 ">
+        <div className="w-[50%] print:w-[40%] ml-24 print:ml-1 ">
           <ol>
             <CoinTab
               coinTitle="X .05"
@@ -79,7 +79,7 @@ const CashCounts = ({ totalCoins, coinCount, handleChange }) => {
             />
           </ol>
         </div>
-        <div className="w-[50%] pl-72 ">
+        <div className="w-[50%] pl-72 print:pl-48 ">
           <ol>
             <TotalTab total={formatter.format(totalCoins.nickels)} />
             <TotalTab total={formatter.format(totalCoins.dimes)} />
