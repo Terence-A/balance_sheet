@@ -28,7 +28,7 @@ const UserInfo = () => {
       </div>
       <div className="flex flex-col gap-2  ">
         <p className=" flex gap-5 ">
-          <label className="font-bold">Date: </label>
+          <label className="font-bold">Date:</label>
           <input
             className="w-72 print:w-52 text-center border-b border-b-stone-950"
             type="date"
@@ -38,9 +38,9 @@ const UserInfo = () => {
         </p>
 
         <p className="flex gap-2">
-          <label className="font-bold">Name: </label>
+          <label className="font-bold pr-1">Name: </label>
           <input
-            className="w-72 print:w-52 text-center border-b border-b-stone-950"
+            className="w-72 print:w-52  text-center border-b border-b-stone-950"
             type="text"
           />
         </p>
