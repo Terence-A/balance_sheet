@@ -1,4 +1,14 @@
+import { useEffect, useState } from "react";
+
 const UserInfo = () => {
+  const [currentDate, setCurrentDate] = useState();
+
+  useEffect(() => {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("en-CA");
+    setCurrentDate(formattedDate);
+  }, []);
+
   return (
     <section className="flex justify-evenly text-2xl font-semibold">
       <div className="flex flex-col gap-2">
@@ -20,6 +30,8 @@ const UserInfo = () => {
           <input
             className="w-72 text-center border-b border-b-stone-950"
             type="date"
+            value={currentDate}
+            onChange={(e) => setCurrentDate(e.target.value)}
           />
         </p>
 
