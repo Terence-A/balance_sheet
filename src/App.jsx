@@ -53,9 +53,13 @@ function App() {
     totalCoins.fifties +
     totalCoins.hundreds;
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <>
-      <main>
+      <main className=" print:text-xs print:leading-tight print-h1-sm">
         <Header />
         <UserInfo />
         <CashCounts
@@ -65,8 +69,11 @@ function App() {
         />
         <TotalSummary totalCoins={totalCoins} totalCash={totalCash} />
         <PersonalNotes />
-        <div className="text-center mt-5">
-          <button className=" px-6 py-2 border-2 text-sm font-bold border-stone-900 rounded-lg ">
+        <div className="text-center mt-5 print:hidden">
+          <button
+            className=" px-6 py-2 border-2 text-sm font-bold border-stone-900 rounded-lg"
+            onClick={handlePrint}
+          >
             PRINT
           </button>
         </div>

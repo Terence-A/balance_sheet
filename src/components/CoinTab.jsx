@@ -11,7 +11,7 @@ const CoinTab = ({ coinTitle, coinAmount, coinName, handleChange }) => {
           value={coinAmount}
           onChange={(e) => handleChange(coinName, e.target.value)}
           onFocus={handleFocus}
-          className="w-12 ml-20  font-bold"
+          className="w-12 ml-20 print:ml-10  font-bold"
         />
         <label className="w-20">{coinTitle}</label>
       </p>
