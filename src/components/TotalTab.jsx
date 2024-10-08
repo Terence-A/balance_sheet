@@ -1,6 +1,6 @@
 const TotalTab = ({ total }) => {
   return (
-    <li className="my-2 ">
+    <li className="my-1 ">
       <p className="font-bold">{total}</p>
     </li>
   );

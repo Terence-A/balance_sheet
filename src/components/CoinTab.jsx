@@ -5,15 +5,15 @@ const CoinTab = ({ coinTitle, coinAmount, coinName, handleChange }) => {
 
   return (
     <li>
-      <p className="flex my-2 gap-2 ">
-        <label className="w-20">{coinTitle}</label>
+      <p className="flex my-1 gap-2 ">
         <input
           type="number"
           value={coinAmount}
           onChange={(e) => handleChange(coinName, e.target.value)}
           onFocus={handleFocus}
-          className="w-20 ml-10  font-bold"
+          className="w-12 ml-20  font-bold"
         />
+        <label className="w-20">{coinTitle}</label>
       </p>
     </li>
   );

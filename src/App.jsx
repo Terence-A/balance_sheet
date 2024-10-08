@@ -65,8 +65,8 @@ function App() {
         />
         <TotalSummary totalCoins={totalCoins} totalCash={totalCash} />
         <PersonalNotes />
-        <div className="text-center mt-10">
-          <button className="w-32 px-8 py-2 border-2 text-xl font-bold border-stone-900 rounded-lg ">
+        <div className="text-center mt-5">
+          <button className=" px-6 py-2 border-2 text-sm font-bold border-stone-900 rounded-lg ">
             PRINT
           </button>
         </div>

@@ -10,12 +10,12 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const CashCounts = ({ totalCoins, coinCount, handleChange }) => {
   return (
-    <section className="mt-10">
-      <header className="ml-[20%] text-xl font-extrabold mb-10">
+    <section className="mt-7">
+      <header className="ml-[17%] text-lg font-extrabold mb-5">
         Money Tray Count
       </header>
-      <div className="flex justify-around text-lg font-semibold w-[80%]  mx-auto ">
-        <div className="w-[50%] ml-60 ">
+      <div className="flex justify-around text-md font-semibold w-[74%]  mx-auto ">
+        <div className="w-[50%] ml-24 ">
           <ol>
             <CoinTab
               coinTitle="X .05"
