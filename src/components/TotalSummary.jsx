@@ -20,6 +20,8 @@ const TotalSummary = ({ totalCash }) => {
   let totalMoney = formatter.format(
     totals.cheque + totals.creditCards + totalCash - 200
   );
+  let shortOrOver =
+    totals.cheque + totals.creditCards + totalCash - 200 - totals.netReceived;
 
   const handleInput = (inputIdentifier, newAmount) => {
     setTotals((prevTotals) => {
@@ -60,7 +62,10 @@ const TotalSummary = ({ totalCash }) => {
           identifier="netReceived"
           handleInput={handleInput}
         />
-        <SummaryTab title="H. Short or Over" total={0} />
+        <SummaryTab
+          title="H. Short or Over"
+          total={formatter.format(shortOrOver)}
+        />
         <SummaryTab title="I. Paid Outs" total={0} />
       </ol>
     </section>
