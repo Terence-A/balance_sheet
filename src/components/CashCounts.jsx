@@ -1,5 +1,5 @@
 import CoinTab from "./CoinTab";
-import TotalTab from "./totalTab";
+import TotalTab from "./TotalTab";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
