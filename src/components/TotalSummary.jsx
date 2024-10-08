@@ -34,7 +34,7 @@ const TotalSummary = ({ totalCash }) => {
   };
 
   return (
-    <section className="mt-10">
+    <section className="mt-7">
       <ol>
         <SummaryTab title="A. TOTAL CASH" total={formatter.format(totalCash)} />
         <SummaryTab
